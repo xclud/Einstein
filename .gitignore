@@ -1,0 +1,5 @@
+/Einstein/bin
+/Einstein/build
+/Einstein/node_modules
+/Einstein/obj
+/Einstein/*.user

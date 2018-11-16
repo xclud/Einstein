@@ -1,0 +1,167 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>Einstein</Name>
+    <RootNamespace>NodejsConsoleApp1</RootNamespace>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>df65c060-307d-4759-9f2a-3166cfb01fa3</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>app.ts</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <EnableTypeScript>true</EnableTypeScript>
+    <StartWebBrowser>False</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app.ts" />
+    <Content Include="package.json" />
+    <Content Include="tsconfig.json" />
+    <TypeScriptCompile Include="console.ts" />
+    <TypeScriptCompile Include="engine.ts" />
+    <TypeScriptCompile Include="source\globals.ts" />
+    <TypeScriptCompile Include="source\globalscripts\DamageTypes.ts" />
+    <TypeScriptCompile Include="source\globalscripts\interpolation.ts" />
+    <TypeScriptCompile Include="source\globalscripts\Math.ts" />
+    <TypeScriptCompile Include="source\globalscripts\ModificationTemplates.ts" />
+    <TypeScriptCompile Include="source\globalscripts\random.ts" />
+    <TypeScriptCompile Include="source\globalscripts\Resources.ts" />
+    <TypeScriptCompile Include="source\globalscripts\Technologies.ts" />
+    <TypeScriptCompile Include="source\globalscripts\Templates.ts" />
+    <TypeScriptCompile Include="source\globalscripts\Trade.ts" />
+    <TypeScriptCompile Include="source\globalscripts\utility.ts" />
+    <TypeScriptCompile Include="source\globalscripts\vector.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Area.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\BoundingBox.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\AdjacentToAreaConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\AndConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\AvoidAreasConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\AvoidTextureConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\AvoidTileClassConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\BorderTileClassConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\HeightConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\NearTileClassConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\NullConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\PassableMapAreaConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\SlopeConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\StaticConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\StayAreasConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\StayInTileClassConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Constraints\StayTextureConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Entity.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\EntitySpecs.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Environment.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\IConstraint.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\IGroup.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\IObject.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\IPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\IPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\ITerrain.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Library.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Map.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Math.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\CityPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\ElevationBlendingPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\ElevationPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\HeightmapPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\LayeredPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\MultiPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\RandomElevationPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\SmoothElevationPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\SmoothingPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\TerrainPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\TerrainTextureArrayPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\TileClassPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Painters\TileClassUnPainter.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Placers\ChainPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Placers\ClumpPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Placers\ConvexPolygonPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Placers\DiskPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Placers\EntitiesObstructionPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Placers\HeightPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Placers\MapBoundsPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Placers\PathPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Placers\RandomPathPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Placers\RectPlacer.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\RandomGroup.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\RandomMap.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\RandomMapLogger.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\RandomObject.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\RangeOp.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\SimpleGroup.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\SimpleObject.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\Terrain.ts" />
+    <TypeScriptCompile Include="source\maps\random\rmgen\TileClass.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="source\" />
+    <Folder Include="source\globalscripts\" />
+    <Folder Include="source\maps\" />
+    <Folder Include="source\maps\random\" />
+    <Folder Include="source\maps\random\rmgen\" />
+    <Folder Include="source\maps\random\rmgen\Constraints\" />
+    <Folder Include="source\maps\random\rmgen\Painters\" />
+    <Folder Include="source\maps\random\rmgen\Placers\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
