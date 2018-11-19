@@ -3,3 +3,4 @@
 /Einstein/node_modules
 /Einstein/obj
 /Einstein/*.user
+/.vs/Einstein/v15/*.suo

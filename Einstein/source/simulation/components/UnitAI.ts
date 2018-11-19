@@ -32,7 +32,7 @@ class UnitAI extends Component {
 
     lastShorelinePosition: any;
 
-    Schema =
+    readonly Schema =
         "<a:help>Controls the unit's movement, attacks, etc, in response to commands from the player.</a:help>" +
         "<a:example/>" +
         "<element name='DefaultStance'>" +
@@ -786,7 +786,7 @@ class UnitAI extends Component {
 
             "Order.Guard": function (msg) {
                 this.CallMemberFunction("Guard", [msg.data.target, false]);
-                var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                 cmpFormation.Disband();
             },
 
@@ -967,12 +967,12 @@ class UnitAI extends Component {
 
             "IDLE": {
                 "enter": function (msg) {
-                    var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                    var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                     cmpFormation.SetRearrange(false);
                 },
 
                 "MoveStarted": function () {
-                    let cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                    let cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                     cmpFormation.SetRearrange(true);
                     cmpFormation.MoveMembersIntoFormation(true, true);
                 }
@@ -980,7 +980,7 @@ class UnitAI extends Component {
 
             "WALKING": {
                 "MoveStarted": function (msg) {
-                    var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                    var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                     cmpFormation.SetRearrange(true);
                     cmpFormation.MoveMembersIntoFormation(true, true);
                 },
@@ -1006,7 +1006,7 @@ class UnitAI extends Component {
                 },
 
                 "MoveStarted": function (msg) {
-                    var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                    var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                     cmpFormation.SetRearrange(true);
                     cmpFormation.MoveMembersIntoFormation(true, true);
                 },
@@ -1045,7 +1045,7 @@ class UnitAI extends Component {
                 },
 
                 "MoveStarted": function (msg) {
-                    let cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                    let cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                     cmpFormation.SetRearrange(true);
                     cmpFormation.MoveMembersIntoFormation(true, true);
                 },
@@ -1090,7 +1090,7 @@ class UnitAI extends Component {
 
                 "APPROACHING": {
                     "MoveStarted": function (msg) {
-                        var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                        var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                         cmpFormation.SetRearrange(true);
                         cmpFormation.MoveMembersIntoFormation(true, true);
                     },
@@ -1115,7 +1115,7 @@ class UnitAI extends Component {
 
             "FORMING": {
                 "MoveStarted": function (msg) {
-                    var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                    var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                     cmpFormation.SetRearrange(true);
                     cmpFormation.MoveMembersIntoFormation(true, false);
                 },
@@ -1126,7 +1126,7 @@ class UnitAI extends Component {
                         this.CallMemberFunction("ResetFinishOrder", []);
                         return;
                     }
-                    var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                    var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
 
                     cmpFormation.FindInPosition();
                 }
@@ -1135,7 +1135,7 @@ class UnitAI extends Component {
             "COMBAT": {
                 "APPROACHING": {
                     "MoveStarted": function (msg) {
-                        var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                        var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                         cmpFormation.SetRearrange(true);
                         cmpFormation.MoveMembersIntoFormation(true, true);
                     },
@@ -1166,7 +1166,7 @@ class UnitAI extends Component {
                             return true;
                         }
 
-                        var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                        var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                         // TODO fix the rearranging while attacking as formation
                         cmpFormation.SetRearrange(!this.IsAttackingAsFormation());
                         cmpFormation.MoveMembersIntoFormation(false, false);
@@ -1191,7 +1191,7 @@ class UnitAI extends Component {
 
                     "leave": function (msg) {
                         this.StopTimer();
-                        var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                        var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                         if (cmpFormation)
                             cmpFormation.SetRearrange(true);
                     },
@@ -1201,7 +1201,7 @@ class UnitAI extends Component {
             "MEMBER": {
                 // Wait for individual members to finish
                 "enter": function (msg) {
-                    var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                    var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                     cmpFormation.SetRearrange(false);
                     this.StopMoving();
                     this.StartTimer(1000, 1000);
@@ -1225,7 +1225,7 @@ class UnitAI extends Component {
 
                 "leave": function (msg) {
                     this.StopTimer();
-                    let cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                    let cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                     cmpFormation.MoveToMembersCenter();
                 },
             },
@@ -1292,7 +1292,7 @@ class UnitAI extends Component {
 
             "WALKING": {
                 "enter": function () {
-                    var cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
+                    var cmpFormation = Engine.QueryInterface<Formation>(this.formationController, IID_Formation);
                     var cmpVisual = Engine.QueryInterface(this.entity, IID_Visual);
                     if (cmpFormation && cmpVisual) {
                         cmpVisual.ReplaceMoveAnimation("walk", cmpFormation.GetFormationAnimation(this.entity, "walk"));
@@ -1313,7 +1313,7 @@ class UnitAI extends Component {
                         cmpVisual.ResetMoveAnimation("run");
                     }
 
-                    var cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
+                    var cmpFormation = Engine.QueryInterface<Formation>(this.formationController, IID_Formation);
                     if (cmpFormation)
                         cmpFormation.SetInPosition(this.entity);
                 },
@@ -1322,7 +1322,7 @@ class UnitAI extends Component {
             // Special case used by Order.LeaveFoundation
             "WALKINGTOPOINT": {
                 "enter": function () {
-                    var cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
+                    var cmpFormation = Engine.QueryInterface<Formation>(this.formationController, IID_Formation);
                     if (cmpFormation)
                         cmpFormation.UnsetInPosition(this.entity);
                     this.SelectAnimation("move");
@@ -1404,7 +1404,7 @@ class UnitAI extends Component {
                     // get stuck with an incorrect animation
                     var animationName = "idle";
                     if (this.IsFormationMember()) {
-                        var cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
+                        var cmpFormation = Engine.QueryInterface<Formation>(this.formationController, IID_Formation);
                         if (cmpFormation)
                             animationName = cmpFormation.GetFormationAnimation(this.entity, animationName);
                     }
@@ -1750,7 +1750,7 @@ class UnitAI extends Component {
                 "ATTACKING": {
                     "enter": function () {
                         var target = this.order.data.target;
-                        var cmpFormation = Engine.QueryInterface(target, IID_Formation);
+                        var cmpFormation = Engine.QueryInterface<Formation>(target, IID_Formation);
                         // if the target is a formation, save the attacking formation, and pick a member
                         if (cmpFormation) {
                             this.order.data.formationTarget = target;
@@ -1788,7 +1788,7 @@ class UnitAI extends Component {
                         // add prefix + no capital first letter for attackType
                         var animationName = "attack_" + this.order.data.attackType.toLowerCase();
                         if (this.IsFormationMember()) {
-                            var cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
+                            var cmpFormation = Engine.QueryInterface<Formation>(this.formationController, IID_Formation);
                             if (cmpFormation)
                                 animationName = cmpFormation.GetFormationAnimation(this.entity, animationName);
                         }
@@ -1818,7 +1818,7 @@ class UnitAI extends Component {
 
                     "Timer": function (msg) {
                         var target = this.order.data.target;
-                        var cmpFormation = Engine.QueryInterface(target, IID_Formation);
+                        var cmpFormation = Engine.QueryInterface<Formation>(target, IID_Formation);
                         // if the target is a formation, save the attacking formation, and pick a member
                         if (cmpFormation) {
                             var thisObject = this;
@@ -1879,7 +1879,7 @@ class UnitAI extends Component {
                         }
 
                         // if we're targetting a formation, find a new member of that formation
-                        var cmpTargetFormation = Engine.QueryInterface(this.order.data.formationTarget || INVALID_ENTITY, IID_Formation);
+                        var cmpTargetFormation = Engine.QueryInterface<Formation>(this.order.data.formationTarget || INVALID_ENTITY, IID_Formation);
                         // if there is no target, it means previously searching for the target inside the target formation failed, so don't repeat the search
                         if (target && cmpTargetFormation) {
                             this.order.data.target = this.order.data.formationTarget;
@@ -2754,7 +2754,7 @@ class UnitAI extends Component {
                                     this.isGarrisoned = true;
 
                                     if (this.formationController) {
-                                        var cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
+                                        var cmpFormation = Engine.QueryInterface<Formation>(this.formationController, IID_Formation);
                                         if (cmpFormation) {
                                             // disable rearrange for this removal,
                                             // but enable it again for the next
@@ -3582,7 +3582,7 @@ class UnitAI extends Component {
 
         // And if the unit is in a formation, remove it from the formation
         if (this.IsFormationMember()) {
-            var cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
+            var cmpFormation = Engine.QueryInterface<Formation>(this.formationController, IID_Formation);
             if (cmpFormation)
                 cmpFormation.RemoveMembers([this.entity]);
         }
@@ -3718,7 +3718,7 @@ class UnitAI extends Component {
      * Returns true if the target exists and has non-zero hitpoints.
      */
     TargetIsAlive(ent) {
-        var cmpFormation = Engine.QueryInterface(ent, IID_Formation);
+        var cmpFormation = Engine.QueryInterface<Formation>(ent, IID_Formation);
         if (cmpFormation)
             return true;
 
@@ -3867,7 +3867,7 @@ class UnitAI extends Component {
     PlaySound(name) {
         // If we're a formation controller, use the sounds from our first member
         if (this.IsFormationController()) {
-            var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+            var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
             var member = cmpFormation.GetPrimaryMember();
             if (member)
                 PlaySound(name, member);
@@ -3995,7 +3995,7 @@ class UnitAI extends Component {
                 return false;
         }
 
-        var cmpFormation = Engine.QueryInterface(target, IID_Formation);
+        var cmpFormation = Engine.QueryInterface<Formation>(target, IID_Formation);
         if (cmpFormation)
             target = cmpFormation.GetClosestMember(this.entity);
 
@@ -4091,7 +4091,7 @@ class UnitAI extends Component {
                 return true;
         }
 
-        var cmpFormation = Engine.QueryInterface(target, IID_Formation);
+        var cmpFormation = Engine.QueryInterface<Formation>(target, IID_Formation);
         if (cmpFormation)
             target = cmpFormation.GetClosestMember(this.entity);
 
@@ -4384,7 +4384,7 @@ class UnitAI extends Component {
     };
 
     MoveIntoFormation(cmd) {
-        var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+        var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
         if (!cmpFormation)
             return;
 
@@ -4813,7 +4813,7 @@ class UnitAI extends Component {
 
             if (this.IsFormationController()) {
                 this.CallMemberFunction("AddOrder", ["Trade", data, queued]);
-                let cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+                let cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
                 if (cmpFormation)
                     cmpFormation.Disband();
             }
@@ -5019,7 +5019,7 @@ class UnitAI extends Component {
     FindWalkAndFightTargets() {
         if (this.IsFormationController()) {
             var cmpUnitAI;
-            var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+            var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
             for (var ent of cmpFormation.members) {
                 if (!(cmpUnitAI = Engine.QueryInterface<UnitAI>(ent, IID_UnitAI)))
                     continue;
@@ -5493,7 +5493,7 @@ class UnitAI extends Component {
      * Call obj.funcname(args) on UnitAI components of all formation members.
      */
     CallMemberFunction(funcname, args) {
-        var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+        var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
         if (!cmpFormation)
             return;
 
@@ -5508,7 +5508,7 @@ class UnitAI extends Component {
      * and return true if all calls return true.
      */
     TestAllMemberFunction(funcname, args) {
-        var cmpFormation = Engine.QueryInterface(this.entity, IID_Formation);
+        var cmpFormation = Engine.QueryInterface<Formation>(this.entity, IID_Formation);
         if (!cmpFormation)
             return false;
 

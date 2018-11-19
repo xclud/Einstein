@@ -1263,7 +1263,7 @@ function TryConstructWall(player, cmpPlayer, controlAllUnits, cmd) {
 function RemoveFromFormation(ents) {
     var formation = ExtractFormations(ents);
     for (var fid in formation.members) {
-        var cmpFormation = Engine.QueryInterface(+fid, IID_Formation);
+        var cmpFormation = Engine.QueryInterface<Formation>(+fid, IID_Formation);
         if (cmpFormation)
             cmpFormation.RemoveMembers(formation.members[fid]);
     }
@@ -1325,7 +1325,7 @@ function GetFormationUnitAIs(ents, player, formationTemplate?) {
         // Selected units either belong to this formation or have no formation
         // Check that all its members are selected
         var fid = formation.ids[0];
-        var cmpFormation = Engine.QueryInterface(+fid, IID_Formation);
+        var cmpFormation = Engine.QueryInterface<Formation>(+fid, IID_Formation);
         if (cmpFormation && cmpFormation.GetMemberCount() == formation.members[fid].length
             && cmpFormation.GetMemberCount() == formation.entities.length) {
             cmpFormation.DeleteTwinFormations();
@@ -1377,7 +1377,7 @@ function GetFormationUnitAIs(ents, player, formationTemplate?) {
 
             // Create the new controller
             var formationEnt = Engine.AddEntity(formationTemplate);
-            var cmpFormation = Engine.QueryInterface(formationEnt, IID_Formation);
+            var cmpFormation = Engine.QueryInterface<Formation>(formationEnt, IID_Formation);
             formationUnitAIs.push(Engine.QueryInterface(formationEnt, IID_UnitAI));
             cmpFormation.SetFormationSeparation(formationSeparation);
             cmpFormation.SetMembers(cluster);

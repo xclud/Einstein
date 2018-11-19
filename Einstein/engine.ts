@@ -61,6 +61,8 @@ const IID_Builder = 63;
 const IID_BuildingAI = 64;
 const IID_Pack = 65;
 const IID_DamageReceiver = 66;
+const IID_Auras = 67;
+const IID_Footprint = 68;
 
 const MT_InitGame = 100;
 const MT_SkirmishReplace = 101;
