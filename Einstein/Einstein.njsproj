@@ -112,6 +112,24 @@
     <TypeScriptCompile Include="source\maps\random\rmgen\SimpleObject.ts" />
     <TypeScriptCompile Include="source\maps\random\rmgen\Terrain.ts" />
     <TypeScriptCompile Include="source\maps\random\rmgen\TileClass.ts" />
+    <TypeScriptCompile Include="source\simulation\components\Component.ts" />
+    <TypeScriptCompile Include="source\simulation\components\Health.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\Cheat.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\Commands.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\DamageBonus.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\Entity.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\FSM.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\InitGame.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\ModificationTemplates.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\Player.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\RallyPointCommands.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\Setup.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\Sound.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\TraderGain.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\Transform.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\ValueModification.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\Walls.ts" />
+    <TypeScriptCompile Include="source\simulation\helpers\WeightedList.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="source\" />
@@ -122,6 +140,9 @@
     <Folder Include="source\maps\random\rmgen\Constraints\" />
     <Folder Include="source\maps\random\rmgen\Painters\" />
     <Folder Include="source\maps\random\rmgen\Placers\" />
+    <Folder Include="source\simulation\" />
+    <Folder Include="source\simulation\components\" />
+    <Folder Include="source\simulation\helpers\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

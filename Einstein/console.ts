@@ -5,6 +5,6 @@ function error(...x: any[]) {
 
 }
 
-function ApplyValueModificationsToTemplate(...x: any[]): any{
-    throw new Error();
+function print(...x: any[]) {
+
 }

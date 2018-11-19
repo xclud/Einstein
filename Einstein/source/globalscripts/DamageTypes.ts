@@ -19,4 +19,10 @@ class DamageTypes {
     GetTypes() {
         return Object.keys(this.names);
     }
+
+    BuildSchema(helptext: string = "") {
+        return this.GetTypes().reduce((schema, type) =>
+            schema + "<element name='" + type + "' a:help='" + type + " " + helptext + "'><ref name='nonNegativeDecimal'/></element>",
+            "");
+    }
 }

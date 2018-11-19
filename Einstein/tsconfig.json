@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2018",
+    "target": "es6",
     "lib": [ "es6" ],
     "sourceMap": false,
     "outDir": "build/"
