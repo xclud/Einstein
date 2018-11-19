@@ -52,12 +52,27 @@ const IID_StatisticsTracker = 54;
 const IID_Fogging = 55;
 const IID_Timer = 56;
 const IID_DeathDamage = 57;
+const IID_UnitMotion = 58;
+const IID_Vision = 59;
+const IID_ResourceGatherer = 60;
+const IID_Heal = 61;
+const IID_Attack = 62;
+const IID_Builder = 63;
+const IID_BuildingAI = 64;
+const IID_Pack = 65;
+const IID_DamageReceiver = 66;
 
 const MT_InitGame = 100;
 const MT_SkirmishReplace = 101;
 const MT_EntityRenamed = 102;
 const MT_AIMetadata = 103;
 const MT_HealthChanged = 104;
+const MT_PickupCanceled = 105;
+const MT_UnitAIOrderDataChanged = 106;
+const MT_PickupRequested = 107;
+const MT_UnitAIStateChanged = 108;
+const MT_UnitStanceChanged = 109;
+const MT_UnitIdleChanged = 110;
 
 var g_MapSettings = {
     Name: "XX",

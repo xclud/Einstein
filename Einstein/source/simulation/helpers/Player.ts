@@ -207,7 +207,7 @@ function QueryOwnerInterface(ent, iid = IID_Player)
  * with the given ID number.
  * iid is typically IID_Player.
  */
-function QueryPlayerIDInterface(id, iid = IID_Player)
+function QueryPlayerIDInterface(id: number, iid = IID_Player)
 {
 	var cmpPlayerManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_PlayerManager);
 
