@@ -114,6 +114,7 @@
     <TypeScriptCompile Include="source\maps\random\rmgen\TileClass.ts" />
     <TypeScriptCompile Include="source\simulation\components\Component.ts" />
     <TypeScriptCompile Include="source\simulation\components\Health.ts" />
+    <TypeScriptCompile Include="source\simulation\components\Identity.ts" />
     <TypeScriptCompile Include="source\simulation\helpers\Cheat.ts" />
     <TypeScriptCompile Include="source\simulation\helpers\Commands.ts" />
     <TypeScriptCompile Include="source\simulation\helpers\DamageBonus.ts" />

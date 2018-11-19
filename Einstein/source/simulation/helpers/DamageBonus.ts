@@ -1,11 +1,11 @@
 /**
  *  Calculate the attack damage multiplier against a target.
  */
-function GetDamageBonus(target, template)
+function GetDamageBonus(target: number, template)
 {
 	let attackBonus = 1;
 
-	let cmpIdentity = Engine.QueryInterface(target, IID_Identity);
+    let cmpIdentity = Engine.QueryInterface<Identity>(target, IID_Identity);
 	if (!cmpIdentity)
 		return 1;
 

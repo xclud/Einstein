@@ -29,7 +29,7 @@ function loadCivFiles(selectableOnly) {
  * Gets an array of all classes for this identity template
  */
 function GetIdentityClasses(template) {
-    var classList = [];
+    var classList: string[] = [];
     if (template.Classes && template.Classes._string)
         classList = classList.concat(template.Classes._string.split(/\s+/));
 
@@ -45,7 +45,7 @@ function GetIdentityClasses(template) {
  * Gets an array with all classes for this identity template
  * that should be shown in the GUI
  */
-function GetVisibleIdentityClasses(template) {
+function GetVisibleIdentityClasses(template): string[] {
     if (template.VisibleClasses && template.VisibleClasses._string)
         return template.VisibleClasses._string.split(/\s+/);
     return [];

@@ -353,7 +353,7 @@ var g_Commands = {
     "delete-entities": function (player, cmd, data) {
         for (let ent of data.entities) {
             if (!data.controlAllUnits) {
-                let cmpIdentity = Engine.QueryInterface(ent, IID_Identity);
+                let cmpIdentity = Engine.QueryInterface<Identity>(ent, IID_Identity);
                 if (cmpIdentity && cmpIdentity.IsUndeletable())
                     continue;
 
@@ -1297,7 +1297,7 @@ function GetFormationUnitAIs(ents, player, formationTemplate?) {
         if (!cmpUnitAI || !cmpPosition || !cmpPosition.IsInWorld())
             continue;
 
-        var cmpIdentity = Engine.QueryInterface(ent, IID_Identity);
+        var cmpIdentity = Engine.QueryInterface<Identity>(ent, IID_Identity);
         // TODO: We only check if the formation is usable by some units
         // if we move them to it. We should check if we can use formations
         // for the other cases.
@@ -1479,7 +1479,7 @@ function CanMoveEntsIntoFormation(ents, formationTemplate) {
 
     var count = 0;
     for (let ent of ents) {
-        var cmpIdentity = Engine.QueryInterface(ent, IID_Identity);
+        var cmpIdentity = Engine.QueryInterface<Identity>(ent, IID_Identity);
         if (!cmpIdentity || !cmpIdentity.CanUseFormation(formationTemplate))
             continue;
 
